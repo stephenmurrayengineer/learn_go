@@ -12,21 +12,31 @@ const spanish = "Spanish"
 const french = "French"
 const italian = "Italian"
 
+// in go, public functions begin with Capital letters, private functions are lowercase
+
 func Hello(name string, language string) string {
 	if name == ""{
 		name = "World"
 	}
+
+	return greetingPrefix(language) + name
+
+}
+
+// second set of brackets defines return string 
+// this is assigned the 'zero' value: ""
+func greetingPrefix(language string) (prefix string){
 	switch language {
-
 	case spanish:
-		return spanishHelloPrefix + name
+		prefix = spanishHelloPrefix
 	case french:
-		return frenchHelloPrefix + name
+		prefix = frenchHelloPrefix
 	case italian:
-		return italianHelloPrefix + name
+		prefix = italianHelloPrefix
+	default:
+		prefix = englishHelloPrefix
 	}
-	return englishHelloPrefix + name
-
+	return
 }
 
 func main() {
