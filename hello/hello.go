@@ -6,8 +6,10 @@ import "fmt"
 // constanst are defined like this:
 const englishHelloPrefix = "Hello, "
 
-// Capitalised function names:
 func Hello(name string) string {
+	if name == ""{
+		name = "World"
+	}
 	return englishHelloPrefix + name
 }
 
