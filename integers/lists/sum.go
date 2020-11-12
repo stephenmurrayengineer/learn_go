@@ -8,3 +8,12 @@ func Sum(numbers []int) (sum int) {
 	}
 	return sum
 }
+
+func SumAll(numbersToSum ...[]int) (sums []int) {
+	// create slice using make function:
+	for _, numbers := range numbersToSum {
+		sums = append(sums, Sum(numbers))
+	}
+
+	return sums
+}
